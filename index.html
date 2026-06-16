@@ -3,11 +3,56 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="data:," />
-    <title>Document</title>
+    <title>Rock, Paper, Scissors</title>
   </head>
   <body>
+    <header>
+      <div class="header-container">
+        <img class="logo" src="images/logo.svg" alt="ROCK, PAPER, SCISSORS" />
+        <div class="score-box">
+          <div class="score-label">Player Score - Computer Score</div>
+          <div class="score-value">0 - 0</div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="game-area">
+        <button id="paper" class="game-buttons">
+          <img src="images/icon-paper.svg" alt="Paper" />
+        </button>
+        <button id="scissors" class="game-buttons">
+          <img src="images/icon-scissors.svg" alt="scissors" />
+        </button>
+        <button id="rock" class="game-buttons">
+          <img src="images/icon-rock.svg" alt="rock" />
+        </button>
+      </div>
+
+      <div class="game-results">
+        <div class="player-choice">
+          <h3>You Picked</h3>
+            <img src="" alt="" id="player-choice-image">
+        </div>
+
+        <div class="computer-choice">
+          <h3>Computer Picked</h3>
+          <img src="" alt="" id="computer-choice-image">
+        </div>
+      </div>
+
+      <div class="result-message">
+        <h2 id="result-message"></h2>
+        <button class="play-again">PLAY AGAIN</button>
+      </div>
+    </main>
     <script src="script.js"></script>
   </body>
 </html>
