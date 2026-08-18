@@ -1,6 +1,6 @@
 # Rock Paper Scissors
 
-Live demo: [link]
+Live demo: [[pumpkinstack.github.io/rock-paper-scissor](https://pumpkinstack.github.io/rock-paper-scissor/)]
 
 A browser-based Rock Paper Scissors game against the computer, with score tracking across rounds.
 
