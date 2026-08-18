@@ -5,6 +5,8 @@ const playerChoice = document.getElementById("player-choice-image");
 const computerImage = document.getElementById("computer-choice-image");
 const message = document.getElementById("result-message");
 const score = document.querySelector(".score-value");
+const choice = document.querySelector(".game-results");
+const result = document.querySelector(".result");
 
 let humanScore = 0;
 let computerScore = 0;
@@ -12,16 +14,22 @@ let computerScore = 0;
 rock.addEventListener("click", () => {
   playerChoice.src = "images/icon-rock.svg";
   playRound("rock", getComputerChoice());
+  choice.removeAttribute("hidden");
+  result.removeAttribute("hidden");
 });
 
 paper.addEventListener("click", () => {
   playerChoice.src = "images/icon-paper.svg";
   playRound("paper", getComputerChoice());
+  choice.removeAttribute("hidden");
+  result.removeAttribute("hidden");
 });
 
 scissors.addEventListener("click", () => {
   playerChoice.src = "images/icon-scissors.svg";
   playRound("scissors", getComputerChoice());
+  choice.removeAttribute("hidden");
+  result.removeAttribute("hidden");
 });
 
 function getComputerChoice() {
@@ -54,25 +62,25 @@ function gameOfFive() {
 
 function playRound(humanChoice, computerChoice) {
   if (humanChoice === "rock" && computerChoice === "scissors") {
-    console.log("You Win! Rock beats Scissors");
+    message.textContent = "You Win! Rock beats Scissors";
     humanScore++;
   } else if (humanChoice === "paper" && computerChoice === "rock") {
-    console.log("You Win! Paper beats Rock");
+    message.textContent = "You Win! Paper beats Rock";
     humanScore++;
   } else if (humanChoice === "scissors" && computerChoice === "paper") {
-    console.log("You Win! Scissors beats Paper");
+    message.textContent = "You Win! Scissors beats Paper";
     humanScore++;
   } else if (humanChoice === "rock" && computerChoice === "paper") {
-    console.log("You Lose! Paper beats Rock");
+    message.textContent = "You Lose! Paper beats Rock";
     computerScore++;
   } else if (humanChoice === "paper" && computerChoice === "scissors") {
-    console.log("You Lose! Scissors beats Paper");
+    message.textContent = "You Lose! Scissors beats Paper";
     computerScore++;
   } else if (humanChoice === "scissors" && computerChoice === "rock") {
-    console.log("You Lose! Rock beats Scissors");
+    message.textContent = "You Lose! Rock beats Scissors";
     computerScore++;
   } else {
-    console.log("Draw");
+    message.textContent = "Draw";
   }
 
   gameOfFive();
@@ -85,7 +93,11 @@ document.querySelector(".play-again").addEventListener("click", () => {
   computerScore = 0;
   score.textContent = "0 - 0";
   message.textContent = "";
+  playerChoice.src = "";
+  computerImage.src = "";
   rock.disabled = false;
   paper.disabled = false;
   scissors.disabled = false;
+  choice.setAttribute("hidden", "");
+  result.setAttribute("hidden", "");
 });
